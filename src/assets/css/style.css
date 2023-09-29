@@ -1,0 +1,14 @@
+.hide {
+  display: none;
+}
+
+.error {
+  margin-top: 10px;
+  color: red;
+  font-size: 16px;
+}
+
+#user_type{
+    margin: 0 15px;
+    width: 387px;
+}

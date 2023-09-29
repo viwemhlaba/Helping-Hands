@@ -1,0 +1,41 @@
+version: '3'
+services:
+  mailhog:
+    image: mailhog/mailhog
+    logging:
+      driver: 'none'  # disable saving logs
+    ports:
+      - 1025:1025 # smtp server
+      - 8025:8025 # web ui
+  web:
+    build: .
+    ports:
+      - "8003:80"
+    volumes:
+      - "./src:/var/www/html"
+    depends_on:
+      - mysql-sales-ordering-container
+  mysql-sales-ordering-container:
+    container_name: mysql-sales-ordering-container
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: mysecretpassword
+      MYSQL_DATABASE: helping_hands
+      MYSQL_USER: helping_hands
+      MYSQL_PASSWORD: Hnj7Ghb5Fgtyjj
+    ports:
+      - "3308:3306" #change the port always add 1
+    volumes:
+      - "./sql:/sql"
+  phpmyadmin-sales-ordering-container:
+    image: phpmyadmin
+    container_name: phpmyadmin-sales-ordering-container
+    depends_on:
+      - mysql-sales-ordering-container
+    environment:
+      PMA_HOST: mysql-sales-ordering-container
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    ports:
+      - 8082:80

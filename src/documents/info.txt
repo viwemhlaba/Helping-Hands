@@ -1,0 +1,13 @@
+Nurse:
+    name: Nurse Test
+    surname: Surname Nurse
+    password: 6n$`[:V?6#\hC6!
+    email: viwemhlabaremote@gmail.com
+    contact: 0671023499
+
+Admin:
+    name: Viwe
+    surname: Mhlaba
+    password: 6n$`[:V?6#\hC6!
+    email: viwemhlabavm@gmail.com
+    contact: 0671023499

@@ -1,0 +1,9 @@
+email: viwemhlabavm@gmail.com
+password: Nikhanye@8493
+
+Testing Credentials
+
+username: PatientTest
+email: patient.test@gmail.com
+password: test@Main_2023
+userType: P
